@@ -2,9 +2,27 @@
 <resources>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+    <color name="dark_blue">#3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_hint">#BCFFFFFF</color>
+    <color name="white_dark_bg">#D6D6D6</color>
+    <color name="abu2_light">#FF6C6C6C</color>
+    <color name="Blue_light_dark">#147DCE</color>
+    <color name="Blue_light_dark_shadow">#1097BC</color>
+    <color name="Blue_light_light">#4DC4E4</color>
+
+<!--    new color-->
+    <color name="prussian_blue_1">#003A77</color>
+    <color name="prussian_blue_2">#00438A</color>
+    <color name="prussian_blue_3">#004D9F</color>
+    <color name="prussian_blue_4">#0057B3</color>
+    <color name="prussian_blue_5">#0061C8</color>
+    <color name="prussian_blue_6">#006BDD</color>
+    <color name="prussian_blue_7">#0075F1</color>
+    <color name="prussian_blue_8">#077FFF</color>
+
+
 </resources>
