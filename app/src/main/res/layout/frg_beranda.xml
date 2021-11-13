@@ -1,6 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@color/prussian_blue_5"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NIM"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jurusan"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Prodi"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="kelas"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Galih Muhammad Ichsan"/>
+
+                <TextView
+                    android:id="@+id/tv_nim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1841160001"/>
+
+                <TextView
+                    android:id="@+id/tv_jurusan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Teknik Elektro"/>
+
+                <TextView
+                    android:id="@+id/tv_prodi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="D4 Jaringan Telekomunikasi Digital"/>
+                <TextView
+                    android:id="@+id/tv_kelas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4B"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:background="@color/prussian_blue_6"
+                    android:text="GAMBAR 1"/>
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:background="@color/prussian_blue_6"
+                    android:text="GAMBAR 1"/>
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+</ScrollView>

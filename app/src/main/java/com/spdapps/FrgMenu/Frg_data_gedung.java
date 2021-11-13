@@ -46,7 +46,7 @@ public class Frg_data_gedung extends Fragment {
 
         lmDataFrg = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false);
         rvDataFrg.setLayoutManager(lmDataFrg);
-        retriveData();
+
 
         swRefresh1Frg.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -60,8 +60,6 @@ public class Frg_data_gedung extends Fragment {
         return view;
     }
 
-
-
     public void retriveData(){
         pb1Frg.setVisibility(View.VISIBLE);
         APIRequestData ardData = RetroServer.konekRetrofit().create(APIRequestData.class);
@@ -69,11 +67,7 @@ public class Frg_data_gedung extends Fragment {
         tampilData.enqueue(new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
-                int kode = response.body().getKode();
-                String pesan = response.body().getPesan();
                 pb1Frg.setVisibility(View.INVISIBLE);
-                Toast.makeText(getActivity(), "Kode : " +kode + " | Pesan : "+pesan, Toast.LENGTH_SHORT).show()  ;
-
                 listData = response.body().getData();
                 adDataFrg = new AdapterData(getActivity(), listData);
                 rvDataFrg.setAdapter(adDataFrg);
@@ -83,7 +77,15 @@ public class Frg_data_gedung extends Fragment {
             @Override
             public void onFailure(Call<ResponseModel> call, Throwable t) {
                 pb1Frg.setVisibility(View.INVISIBLE);
+                Toast.makeText(getActivity(), "Gagal mengambil data", Toast.LENGTH_SHORT).show();
             }
         });
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        retriveData();
+        Toast.makeText(getActivity(), "Start", Toast.LENGTH_SHORT).show();
+    }
+
 }

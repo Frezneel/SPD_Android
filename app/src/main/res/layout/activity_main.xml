@@ -50,6 +50,7 @@
             android:layout_gravity="bottom"
             android:foregroundGravity="bottom"
             android:background="@color/white"
+            app:labelVisibilityMode="labeled"
             app:itemIconTint="@color/prussian_blue_4"
             app:itemTextColor="@color/prussian_blue_5"
             app:menu="@menu/dashboard_menu"

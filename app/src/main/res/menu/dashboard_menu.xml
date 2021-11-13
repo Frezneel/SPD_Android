@@ -11,6 +11,12 @@
         android:title="List Data"/>
 
     <item
+        android:id="@+id/menu_scan"
+        android:icon="@drawable/ic_baseline_qr_code_scanner_24"
+        android:iconTintMode="multiply"
+        android:title="Scan"/>
+
+    <item
         android:id="@+id/menu_riwayat"
         android:icon="@drawable/ic_baseline_history_24"
         android:title="Riwayat"/>

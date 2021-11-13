@@ -13,8 +13,14 @@
         android:theme="@style/Theme.SPDSosialDanPhysicalDistance"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.spdapps.Activity.LoginMhs"
+            android:exported="false" />
+        <activity
+            android:name="com.spdapps.Activity.tampilQrcode"
+            android:exported="true" />
+        <activity
             android:name="com.spdapps.Activity.Splash"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,10 +32,8 @@
             android:exported="true" />
         <activity
             android:name="com.spdapps.Activity.MainActivity"
-            android:exported="true"/>
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:exported="true" />
+
     </application>
 
 </manifest>

@@ -48,9 +48,7 @@ public class DataMasukGedung extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 swRefresh1.setRefreshing(true);
-
                 retriveData();
-
                 swRefresh1.setRefreshing(false);
             }
         });
