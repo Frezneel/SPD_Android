@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/prussian_blue_5"
-    tools:context="com.spdapps.Activity.LoginMhs">
+    tools:context="com.spdapps.Activity.LoginDosen">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,7 +35,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NIM"
+                android:text="NIP"
                 android:fontFamily="@font/roboto"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -63,14 +63,14 @@
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_baseline_person_24"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
                             app:tint="@color/white" />
                         <EditText
-                            android:id="@+id/et_nim"
+                            android:id="@+id/et_nip"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:hint="NIM"
+                            android:hint="NIP"
                             android:textColor="@color/white"
                             android:textColorHint="@color/white_hint"
                             android:backgroundTint="@color/white"
@@ -121,21 +121,21 @@
                             app:passwordToggleDrawable="@drawable/pass_toggle"
                             app:boxBackgroundColor="@color/white"
                             app:passwordToggleTint="@color/white">
-
-                            <com.google.android.material.textfield.TextInputEditText
+                            <EditText
                                 android:id="@+id/et_password"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_gravity="left"
-                                android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:textColorHighlight="@color/white"
+                                android:textColorHint="@color/white_hint"
                                 android:backgroundTint="@color/white"
-                                android:gravity="left"
+                                android:textColor="@color/white"
                                 android:hint="Password"
                                 android:inputType="textPassword"
-                                android:textColor="@color/white"
-                                android:textColorHighlight="@color/white"
-                                android:textColorHint="@color/white_hint" />
+                                android:layout_gravity="left"
+                                android:gravity="left"/>
+
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

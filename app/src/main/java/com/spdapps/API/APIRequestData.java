@@ -1,7 +1,14 @@
 package com.spdapps.API;
 
+import android.webkit.JavascriptInterface;
+
+import com.google.gson.annotations.JsonAdapter;
 import com.spdapps.Model.ResponseModel;
-import com.spdapps.Model.ResponseModelAkun;
+import com.spdapps.Model.ResponseModelAkunDosen;
+import com.spdapps.Model.ResponseModelAkunMhs;
+import com.spdapps.Model.ResponseModelKelas;
+
+import java.math.BigInteger;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -14,9 +21,23 @@ public interface APIRequestData {
     Call<ResponseModel> ardRetrieveData();
 
     @FormUrlEncoded
-    @POST("login.php")
-    Call<ResponseModelAkun> ardLoginData(
+    @POST("loginmhs.php")
+    Call<ResponseModelAkunMhs> ardLoginDataMhs(
             @Field("nim") String nim,
             @Field("password") String password
     );
+
+    @FormUrlEncoded
+    @POST("logindosen.php")
+    Call<ResponseModelAkunDosen> ardLoginDataDosen(
+            @Field("nip") String nim,
+            @Field("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("kelas.php")
+    Call<ResponseModelKelas> ardAmbilKelas(
+        @Field("nip_dosen") String nip_dosen
+    );
+
 }

@@ -6,15 +6,9 @@
         android:title="Beranda"/>
 
     <item
-        android:id="@+id/menu_list_data"
+        android:id="@+id/kelas"
         android:icon="@drawable/ic_baseline_home_work_24"
-        android:title="List Data"/>
-
-    <item
-        android:id="@+id/menu_scan"
-        android:icon="@drawable/ic_baseline_qr_code_scanner_24"
-        android:iconTintMode="multiply"
-        android:title="Scan"/>
+        android:title="Kelas"/>
 
     <item
         android:id="@+id/menu_riwayat"
@@ -22,7 +16,7 @@
         android:title="Riwayat"/>
 
     <item
-        android:id="@+id/menu_akun"
-        android:icon="@drawable/ic_baseline_person_24"
-        android:title="Akun"/>
+        android:id="@+id/menu_setting"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Setting"/>
 </menu>

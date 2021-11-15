@@ -2,16 +2,13 @@ package com.spdapps.Model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DataModelAkun {
+public class DataModelAkunDosen {
 
-	@SerializedName("nim")
-	private String nim;
+	@SerializedName("nip")
+	private String nip;
 
 	@SerializedName("nama")
 	private String nama;
-
-	@SerializedName("kelas")
-	private String kelas;
 
 	@SerializedName("jurusan")
 	private String jurusan;
@@ -19,15 +16,12 @@ public class DataModelAkun {
 	@SerializedName("id")
 	private String id;
 
-	@SerializedName("prodi")
-	private String prodi;
-
-	public void setNim(String nim){
-		this.nim = nim;
+	public void setNip(String nip){
+		this.nip = nip;
 	}
 
-	public String getNim(){
-		return nim;
+	public String getNip(){
+		return nip;
 	}
 
 	public void setNama(String nama){
@@ -36,14 +30,6 @@ public class DataModelAkun {
 
 	public String getNama(){
 		return nama;
-	}
-
-	public void setKelas(String kelas){
-		this.kelas = kelas;
-	}
-
-	public String getKelas(){
-		return kelas;
 	}
 
 	public void setJurusan(String jurusan){
@@ -60,13 +46,5 @@ public class DataModelAkun {
 
 	public String getId(){
 		return id;
-	}
-
-	public void setProdi(String prodi){
-		this.prodi = prodi;
-	}
-
-	public String getProdi(){
-		return prodi;
 	}
 }

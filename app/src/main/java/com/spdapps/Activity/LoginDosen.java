@@ -12,37 +12,37 @@ import android.widget.Toast;
 import com.example.spdsosialdanphysicaldistance.R;
 import com.spdapps.API.APIRequestData;
 import com.spdapps.API.RetroServer;
-import com.spdapps.Model.DataModelAkunMhs;
-import com.spdapps.Model.ResponseModelAkunMhs;
-import com.spdapps.Model.SessionManagerMhs;
+import com.spdapps.Model.DataModelAkunDosen;
+import com.spdapps.Model.ResponseModelAkunDosen;
+import com.spdapps.Model.SessionManagerDosen;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginMhs extends AppCompatActivity {
+public class LoginDosen extends AppCompatActivity {
     private Button btLogin;
-    private EditText etnim, etPassword;
-    private String  username, password;
-    private SessionManagerMhs sessionManagerMhs;
+    private EditText etnip, etPassword;
+    private String nip, password;
+    private SessionManagerDosen sessionManagerDosen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_mhs);
+        setContentView(R.layout.activity_login_dosen);
 
-        etnim = findViewById(R.id.et_nim);
+        etnip = findViewById(R.id.et_nip);
         etPassword = findViewById(R.id.et_password);
         btLogin = findViewById(R.id.bt_login);
 
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                username = etnim.getText().toString();
+                nip = etnip.getText().toString();
                 password = etPassword.getText().toString();
 
-                if(username.trim().equals("")){
-                    etnim.setError("Isi username");
+                if(nip.trim().equals("")){
+                    etnip.setError("Isi nip");
                 }
                 else if(password.trim().equals("")){
                     etPassword.setError("Isi password");
@@ -53,38 +53,37 @@ public class LoginMhs extends AppCompatActivity {
 
             }
         });
-
     }
 
     private void loginData(){
         APIRequestData ardData = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ResponseModelAkunMhs> logindata = ardData.ardLoginDataMhs(username,password);
+        Call<ResponseModelAkunDosen> logindata = ardData.ardLoginDataDosen(nip,password);
 
-        logindata.enqueue(new Callback<ResponseModelAkunMhs>() {
+        logindata.enqueue(new Callback<ResponseModelAkunDosen>() {
             @Override
-            public void onResponse(Call<ResponseModelAkunMhs> call, Response<ResponseModelAkunMhs> response) {
+            public void onResponse(Call<ResponseModelAkunDosen> call, Response<ResponseModelAkunDosen> response) {
                 int kode = response.body().getKode();
                 String pesan = response.body().getPesan();
 
                 if(kode == 1){
-                    sessionManagerMhs = new SessionManagerMhs(LoginMhs.this);
-                    DataModelAkunMhs listDataAkun = response.body().getData();
-                    sessionManagerMhs.createLoginSession(listDataAkun);
+                    sessionManagerDosen = new SessionManagerDosen(LoginDosen.this);
+                    DataModelAkunDosen listDataAkun = response.body().getData();
+                    sessionManagerDosen.createLoginSession(listDataAkun);
 
-                    Toast.makeText(LoginMhs.this, "Kode : "+kode+" | Pesan : "+pesan, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginMhs.this, MainActivityMhs.class);
+                    Toast.makeText(LoginDosen.this, "Kode : "+kode+" | Pesan : "+pesan, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginDosen.this, MainActivityDosen.class);
                     startActivity(intent);
                     finish();
                 }
                 else{
-                    Toast.makeText(LoginMhs.this, "Kode : "+kode+" | Pesan : "+pesan, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginDosen.this, "Kode : "+kode+" | Pesan : "+pesan, Toast.LENGTH_SHORT).show();
                 }
 
             }
 
             @Override
-            public void onFailure(Call<ResponseModelAkunMhs> call, Throwable t) {
-                Toast.makeText(LoginMhs.this, "Gagal Mengubungi server : "+t.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<ResponseModelAkunDosen> call, Throwable t) {
+                Toast.makeText(LoginDosen.this, "Gagal Mengubungi server : "+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

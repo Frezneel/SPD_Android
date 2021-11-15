@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.spdapps.Activity.MainActivity">
+    tools:context="com.spdapps.Activity.MainActivityMhs">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,7 +53,7 @@
             app:labelVisibilityMode="labeled"
             app:itemIconTint="@color/prussian_blue_4"
             app:itemTextColor="@color/prussian_blue_5"
-            app:menu="@menu/dashboard_menu"
+            app:menu="@menu/dashboard_menu_mhs"
             />
     </LinearLayout>
 

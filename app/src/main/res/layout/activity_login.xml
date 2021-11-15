@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/prussian_blue_2"
+    tools:context="com.spdapps.Activity.Login">
+
+    <TextView
+        android:id="@+id/tv_menulogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MENU LOGIN"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_menulogin"
+        android:layout_centerInParent="true">
+
+        <ImageButton
+            android:id="@+id/ib_dosen"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/icon_dosen"
+            android:onClick="loginDosen"/>
+
+        <Button
+            android:id="@+id/bt_loginDosen"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/ib_dosen"
+            android:text="DOSEN"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:background="@color/white"
+            android:onClick="loginDosen"
+            />
+
+        <ImageButton
+            android:id="@+id/ib_mhs"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="40dp"
+            android:layout_toEndOf="@+id/ib_dosen"
+            android:background="@drawable/icon_student"
+            android:onClick="loginMhs"/>
+
+        <Button
+            android:id="@+id/bt_loginMhs"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/ib_mhs"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/bt_loginDosen"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="Mahasiswa"
+            android:textAlignment="center"
+            android:onClick="loginMhs"/>
+    </RelativeLayout>
+</RelativeLayout>

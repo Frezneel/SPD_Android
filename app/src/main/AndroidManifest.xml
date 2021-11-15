@@ -13,6 +13,15 @@
         android:theme="@style/Theme.SPDSosialDanPhysicalDistance"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.spdapps.Activity.MainActivityDosen"
+            android:exported="false" />
+        <activity
+            android:name="com.spdapps.Activity.LoginDosen"
+            android:exported="false" />
+        <activity
+            android:name="com.spdapps.Activity.Login"
+            android:exported="false" />
+        <activity
             android:name="com.spdapps.Activity.LoginMhs"
             android:exported="false" />
         <activity
@@ -31,9 +40,8 @@
             android:name="com.spdapps.Activity.DataMasukGedung"
             android:exported="true" />
         <activity
-            android:name="com.spdapps.Activity.MainActivity"
+            android:name="com.spdapps.Activity.MainActivityMhs"
             android:exported="true" />
-
     </application>
 
 </manifest>

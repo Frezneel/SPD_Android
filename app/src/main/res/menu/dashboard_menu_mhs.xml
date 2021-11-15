@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_beranda"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Beranda"/>
+
+    <item
+        android:id="@+id/kelas"
+        android:icon="@drawable/ic_baseline_home_work_24"
+        android:title="Kelas"/>
+
+    <item
+        android:id="@+id/menu_riwayat"
+        android:icon="@drawable/ic_baseline_history_24"
+        android:title="Riwayat"/>
+
+    <item
+        android:id="@+id/menu_setting"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Setting"/>
+</menu>

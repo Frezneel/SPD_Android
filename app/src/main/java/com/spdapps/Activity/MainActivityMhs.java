@@ -17,38 +17,39 @@ import com.spdapps.FrgMenu.Frg_data_gedung;
 import com.example.spdsosialdanphysicaldistance.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.spdapps.FrgMenu.Frg_riwayat;
-import com.spdapps.Model.SessionManager;
+import com.spdapps.Model.SessionManagerDosen;
+import com.spdapps.Model.SessionManagerMhs;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivityMhs extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private BottomNavigationView dashboardMenu;
-    private SessionManager sessionManager;
+    private SessionManagerMhs sessionManagerMhs;
 
     String nim, nama, jurusan, prodi, kelas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_mhs);
 
         dashboardMenu = findViewById(R.id.dashboard_menu);
         dashboardMenu.setOnNavigationItemSelectedListener(this);
         dashboardMenu.setSelectedItemId(R.id.menu_beranda);
 
-        sessionManager = new SessionManager(MainActivity.this);
-        if(!sessionManager.isLoggedIn()){
+        sessionManagerMhs = new SessionManagerMhs(MainActivityMhs.this);
+        if(!sessionManagerMhs.isLoggedIn()){
             moveToLogin();
         }
 
-        nim = sessionManager.getAkunDetail().get("s_nim");
-        nama = sessionManager.getAkunDetail().get("s_nama");
-        jurusan = sessionManager.getAkunDetail().get("s_jurusan");
-        prodi = sessionManager.getAkunDetail().get("s_prodi");
-        kelas = sessionManager.getAkunDetail().get("s_nama");
+        nim = sessionManagerMhs.getAkunDetail().get("s_nim");
+        nama = sessionManagerMhs.getAkunDetail().get("s_nama");
+        jurusan = sessionManagerMhs.getAkunDetail().get("s_jurusan");
+        prodi = sessionManagerMhs.getAkunDetail().get("s_prodi");
+        kelas = sessionManagerMhs.getAkunDetail().get("s_kelas");
 
     }
 
     private void moveToLogin() {
-        Intent intent = new Intent(MainActivity.this, LoginMhs.class);
+        Intent intent = new Intent(MainActivityMhs.this, Login.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivity(intent);
         finish();
@@ -74,20 +75,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         switch (item.getItemId()){
             //action ketika ditekan
 
-            case R.id.menu_list_data:
+            case R.id.kelas:
                 loadFragment(new Frg_data_gedung());
-                break;
-
-            case R.id.menu_scan:
-                Intent tampilScan = new Intent(MainActivity.this, tampilQrcode.class);
-                startActivity(tampilScan);
                 break;
 
             case R.id.menu_riwayat:
                 loadFragment(new Frg_riwayat());
                 break;
 
-            case R.id.menu_akun:
+            case R.id.menu_setting:
                 loadFragment(new Frg_akun());
                 break;
 

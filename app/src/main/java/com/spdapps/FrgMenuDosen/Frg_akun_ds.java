@@ -1,4 +1,4 @@
-package com.spdapps.FrgMenu;
+package com.spdapps.FrgMenuDosen;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,7 @@ import com.spdapps.Activity.Login;
 import com.spdapps.Activity.LoginMhs;
 import com.spdapps.Model.SessionManagerMhs;
 
-public class Frg_akun extends Fragment {
+public class Frg_akun_ds extends Fragment {
     View view;
     Button btLogoutAkun;
     SessionManagerMhs sessionManagerMhs;

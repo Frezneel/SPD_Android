@@ -1,14 +1,15 @@
 package com.spdapps.Model;
 
+import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class ResponseModelAkun{
+public class ResponseModelKelas{
 
 	@SerializedName("pesan")
 	private String pesan;
 
 	@SerializedName("data")
-	private DataModelAkun dataModelAkun;
+	private List<DataModelKelas> data;
 
 	@SerializedName("kode")
 	private int kode;
@@ -21,12 +22,12 @@ public class ResponseModelAkun{
 		return pesan;
 	}
 
-	public void setData(DataModelAkun dataModelAkun){
-		this.dataModelAkun = dataModelAkun;
+	public void setData(List<DataModelKelas> data){
+		this.data = data;
 	}
 
-	public DataModelAkun getData(){
-		return dataModelAkun;
+	public List<DataModelKelas> getData(){
+		return data;
 	}
 
 	public void setKode(int kode){
